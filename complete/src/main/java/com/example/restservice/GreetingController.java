@@ -21,9 +21,12 @@ public class GreetingController {
 
 	@GetMapping("/")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) throws UnknownHostException {
-		InetAddress ip = InetAddress.getLocalHost();
-		int serverPort = serverProperties.getPort();
-		System.out.println("Address: " + System.getenv("NOMAD_HOST_ADDR_http"));
-		return new Greeting(String.format(template, ip.getHostAddress() + ":" + String.valueOf(serverPort)));
+		// InetAddress ip = InetAddress.getLocalHost();
+		// int serverPort = serverProperties.getPort();	
+		// return new Greeting(String.format(template, ip.getHostAddress() + ":" + String.valueOf(serverPort)));
+
+		String address = System.getenv("NOMAD_HOST_ADDR_http");
+		System.out.println("Address: " + address);
+		return new Greeting(String.format(template, address));
 	}
 }
