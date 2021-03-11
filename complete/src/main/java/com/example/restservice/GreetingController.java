@@ -19,7 +19,7 @@ public class GreetingController {
 	@Autowired
 	private ServerProperties serverProperties;
 
-	@GetMapping("/")
+	@GetMapping("/api/data")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) throws UnknownHostException {
 		// InetAddress ip = InetAddress.getLocalHost();
 		// int serverPort = serverProperties.getPort();	
