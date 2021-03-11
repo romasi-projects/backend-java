@@ -25,7 +25,7 @@ public class GreetingController {
 		// int serverPort = serverProperties.getPort();	
 		// return new Greeting(String.format(template, ip.getHostAddress() + ":" + String.valueOf(serverPort)));
 
-		String address = System.getenv("NOMAD_HOST_ADDR_http");
+		String address = System.getenv("ADDRESS");
 		return new Greeting(String.format(template, address));
 	}
 }
